@@ -1,0 +1,179 @@
+local fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/FluentUI/FluentUI/main/FluentUI.lua"))()
+local function makeoutline(object, outline, color, transparency)
+    if outline then
+        local outlineFrame = Instance.new("Frame", object)
+        outlineFrame.Size = UDim2.new(1, 0, 1, 0)
+        outlineFrame.Position = UDim2.new(0, 0, 0, 0)
+        outlineFrame.BackgroundColor3 = color
+        outlineFrame.BackgroundTransparency = transparency
+        outlineFrame.BorderSizePixel = 0
+        outlineFrame.Visible = true
+    end
+end
+
+local fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/FluentUI/FluentUI/main/FluentUI.lua"))()
+local function makeoutline(object, outline, color, transparency)
+    if outline then
+        local outlineFrame = Instance.new("Frame", object)
+        outlineFrame.Size = UDim2.new(1, 0, 1, 0)
+        outlineFrame.Position = UDim2.new(0, 0, 0, 0)
+        outlineFrame.BackgroundColor3 = color
+        outlineFrame.BackgroundTransparency = transparency
+        outlineFrame.BorderSizePixel = 0
+        outlineFrame.Visible = true
+    end
+end
+
+local window = fluent:CreateWindow({
+    Name = "aftermathlon",
+    Theme = "Dark",
+    SizeX = 500,
+    SizeY = 500,
+    PositionX = 0,
+    PositionY = 0,
+    BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+    TextColor3 = Color3.fromRGB(0, 0, 0),
+    Font = Enum.Font.SourceSans,
+    FontSize = Enum.FontSize.Size14,
+    TextSize = 14,
+    TextStrokeTransparency = 0.5,
+    TextStrokeColor3 = Color3.fromRGB(0, 0, 0),
+})
+
+print("hello world")
+
+repeat wait() until game:IsLoaded()
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+function aimbot()
+    local aimbotGui = Instance.new("ScreenGui", player.PlayerGui)
+    local aimbotfov, aimprotectionFrame
+
+    _G.aimbot = true
+    _G.aimbotfov = 1000
+    _G.aimbotfovcolor = Color3.fromRGB(255, 0, 0)
+    _G.aimbotfovtransparency = 0.5
+    _G.aimbotfovoutline = true
+    _G.aimprotection = true
+
+    function aimfov_circle()
+        aimbotfov = Instance.new("Frame", aimbotGui)
+        aimbotfov.Size = UDim2.new(0, _G.aimbotfov, 0, _G.aimbotfov)
+        aimbotfov.Position = UDim2.new(0.5, -_G.aimbotfov / 2, 0.5, -_G.aimbotfov / 2)
+        aimbotfov.BackgroundColor3 = _G.aimbotfovcolor
+        aimbotfov.BackgroundTransparency = _G.aimbotfovtransparency
+        aimbotfov.BorderSizePixel = 0
+        aimbotfov.Visible = _G.aimbot
+        makeoutline(aimbotfov, _G.aimbotfovoutline, _G.aimbotfovcolor, _G.aimbotfovtransparency)
+    end
+
+    function aimprotection()
+        aimprotectionFrame = Instance.new("Frame", aimbotGui)
+        aimprotectionFrame.Size = UDim2.new(0, _G.aimbotfov, 0, _G.aimbotfov)
+        aimprotectionFrame.Position = UDim2.new(0.5, -_G.aimbotfov / 2, 0.5, -_G.aimbotfov / 2)
+        aimprotectionFrame.BackgroundColor3 = _G.aimbotfovcolor
+        aimprotectionFrame.BackgroundTransparency = _G.aimbotfovtransparency
+        aimprotectionFrame.BorderSizePixel = 0
+        aimprotectionFrame.Visible = _G.aimbot
+        makeoutline(aimprotectionFrame, _G.aimbotfovoutline, _G.aimbotfovcolor, _G.aimbotfovtransparency)
+    end
+
+    aimfov_circle()
+    aimprotection()
+end
+
+function esp()
+    local espGui = Instance.new("ScreenGui", player.PlayerGui)
+    espGui.Name = "ESP"
+    espGui.ResetOnSpawn = false
+    espGui.Enabled = true
+    espGui.IgnoreGuiInset = true
+    espGui.DisplayOrder = 10
+    espGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+    local esplootbag = Instance.new("ScreenGui", player.PlayerGui)
+    esplootbag.Name = "LootBagESP"
+
+    function esp:Render()
+        _G.esp = true
+        _G.espcolor = Color3.fromRGB(255, 0, 0)
+        _G.espoutline = true
+        _G.esptransparency = 0.5
+        _G.espsize = 10
+        _G.esplootbag = true
+        _G.esplootbagcolor = Color3.fromRGB(255, 0, 0)
+        _G.esplootbagoutline = true
+        _G.esplootbagtransparency = 0.5
+        _G.esplootbagsize = 10
+    end
+end
+
+print("hello world")
+
+repeat wait() until game:IsLoaded()
+local player = game:GetService("Players").LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+function aimbot()
+    local aimbotGui = Instance.new("ScreenGui", player.PlayerGui)
+    local aimbotfov, aimprotectionFrame
+
+    _G.aimbot = true
+    _G.aimbotfov = 1000
+    _G.aimbotfovcolor = Color3.fromRGB(255, 0, 0)
+    _G.aimbotfovtransparency = 0.5
+    _G.aimbotfovoutline = true
+    _G.aimprotection = true
+
+    function aimfov_circle()
+        aimbotfov = Instance.new("Frame", aimbotGui)
+        aimbotfov.Size = UDim2.new(0, _G.aimbotfov, 0, _G.aimbotfov)
+        aimbotfov.Position = UDim2.new(0.5, -_G.aimbotfov / 2, 0.5, -_G.aimbotfov / 2)
+        aimbotfov.BackgroundColor3 = _G.aimbotfovcolor
+        aimbotfov.BackgroundTransparency = _G.aimbotfovtransparency
+        aimbotfov.BorderSizePixel = 0
+        aimbotfov.Visible = _G.aimbot
+        makeoutline(aimbotfov, _G.aimbotfovoutline, _G.aimbotfovcolor, _G.aimbotfovtransparency)
+    end
+
+    function aimprotection()
+        aimprotectionFrame = Instance.new("Frame", aimbotGui)
+        aimprotectionFrame.Size = UDim2.new(0, _G.aimbotfov, 0, _G.aimbotfov)
+        aimprotectionFrame.Position = UDim2.new(0.5, -_G.aimbotfov / 2, 0.5, -_G.aimbotfov / 2)
+        aimprotectionFrame.BackgroundColor3 = _G.aimbotfovcolor
+        aimprotectionFrame.BackgroundTransparency = _G.aimbotfovtransparency
+        aimprotectionFrame.BorderSizePixel = 0
+        aimprotectionFrame.Visible = _G.aimbot
+        makeoutline(aimprotectionFrame, _G.aimbotfovoutline, _G.aimbotfovcolor, _G.aimbotfovtransparency)
+    end
+
+    aimfov_circle()
+    aimprotection()
+end
+
+function esp()
+    local espGui = Instance.new("ScreenGui", player.PlayerGui)
+    espGui.Name = "ESP"
+    espGui.ResetOnSpawn = false
+    espGui.Enabled = true
+    espGui.IgnoreGuiInset = true
+    espGui.DisplayOrder = 10
+    espGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+    local esplootbag = Instance.new("ScreenGui", player.PlayerGui)
+    esplootbag.Name = "LootBagESP"
+
+    function esp:Render()
+        _G.esp = true
+        _G.espcolor = Color3.fromRGB(255, 0, 0)
+        _G.espoutline = true
+        _G.esptransparency = 0.5
+        _G.espsize = 10
+        _G.esplootbag = true
+        _G.esplootbagcolor = Color3.fromRGB(255, 0, 0)
+        _G.esplootbagoutline = true
+        _G.esplootbagtransparency = 0.5
+        _G.esplootbagsize = 10
+    end
+end
